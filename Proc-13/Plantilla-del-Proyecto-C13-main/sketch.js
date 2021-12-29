@@ -28,18 +28,20 @@ rabbit.addImage(rabbitImg);
 
 function draw() {
   background(0);
+  
+  // falta mover rabbit (conejo) en el eje x con el mouse
+  rabbit.x = World.mouseX;
 
   var select_sprites = Math.round(random(1,3));
 
   if (frameCount % 80 == 0){
 
     if (select_sprites == 1){
-    createApples(); }
-  
-    else if (select_sprites == 2){
-      createOrange(); }
-
-    else if (select_sprites == 3){
+    createApples(); 
+    } else if (select_sprites == 2){
+      createOrange(); 
+      //Dani el último else ya solo es digamos lo que sobra, ya no agregamos condición va...
+    } else {
       createRed();
     }  
       }
@@ -51,9 +53,11 @@ function draw() {
 
   drawSprites();
 
-  createApples();
-  createOrange();
-  createRed();
+  // Dani en las condiciones de las línea 36 en adelante ya estás mandando llamar las funciones aqui ya no es necesario
+  //por eso se ven amontonadas ya que el frameCount crea la separación arriba y estás las mandas llamar sin separación y se ven amontonadas :)
+ // createApples();
+  //createOrange();
+  //createRed();
   
 
 }
